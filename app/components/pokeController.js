@@ -6,12 +6,21 @@ function drawPokemons() {
   let pokes = _pkService.ApiCards
   let template = ''
   template += `
+  <div class="row my-3">
+  <div class="col">
   <button class="btn btn-dark text-light" onclick="app.controllers.pokeController.getApiPokes('${_pkService.PreviousUrl}')" ${_pkService.PreviousUrl ? '':'disabled'}>Previous</button>
-  <button class="btn btn-dark text-light" onclick="app.controllers.pokeController.getApiPokes('${_pkService.NextUrl}')" ${_pkService.NextUrl ? '': 'disabled'}>Next</button>
+  <button class="btn btn-dark text-light" onclick="app.controllers.pokeController.getApiPokes('${_pkService.NextUrl}')" ${_pkService.NextUrl ? '' : 'disabled'}>Next</button>
+  </div>
+  </div>
+  <div class="row my-3">
+  <div id="optionButtons" class="col d-flex flex-wrap justify-content-center">
   `
   pokes.forEach(p => {
     template += p.SimpleTemplate
   })
+  template += `
+  </div></div>
+  `
   document.querySelector('#pokeAvaliable').innerHTML = template
 }
 
@@ -21,7 +30,7 @@ function drawTeam() {
 
   pokes.forEach(p => {
     template += p.CardTemplate
-    //put in button to delete
+
   })
   document.querySelector('#pokeTeam').innerHTML = template
 }

@@ -1,0 +1,11 @@
+html,
+body {
+  background-color: lightcoral;
+  font-family: 'ZCOOL QingKe HuangYou',
+    cursive;
+
+}
+
+#optionButtons button {
+  width: 200px;
+}

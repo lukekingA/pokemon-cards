@@ -8,16 +8,19 @@ let _pkService = new PokeService()
 function mainInjector() {
   let template = `
   <header class="row">
-    <div class="col">
-      <h1 class="textcenter">Pokemon Players</h1>
+    <div class="col my-4">
+      <h1 class="text-center">Pokemon Players</h1>
     </div>
   </header>
   <main class="row">
-    <div class="col" id="pokeAvaliable">
+    <div class="col-12" id="pokeAvaliable">
 
     </div>
-    <div class="col" id="pokeTeam">
+    
+    <div class="col-12">
+    <div class="row" id="pokeTeam">
 
+    </div
     </div>
   </main>
   <footer class="row">

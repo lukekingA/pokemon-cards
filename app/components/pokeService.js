@@ -66,12 +66,11 @@ export default class PokeService {
       let currentPokemon = new Pokemon(data)
       currentPokemon.url = url
       let compare = _state.myCards.filter(card => card.name == currentPokemon.name)
-      debugger
+
       if (compare[0]) {
         return
       }
       _sandbox.post('', currentPokemon).then(res => {
-        console.log(res)
         this.getMyCards()
       }).catch(err => console.log(err))
 
@@ -93,7 +92,6 @@ export default class PokeService {
 
   removeCard(id) {
     _sandbox.delete(id).then(res => {
-      console.log(res)
       this.getMyCards()
     })
   }

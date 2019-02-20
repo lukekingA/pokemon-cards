@@ -13,6 +13,7 @@ export default class Pokemon {
 
   get CardTemplate() {
     return `
+<div class="col col-sm-4">
 <div class="card">
   <img class="card-img-top" src="${this.img}" alt="Card image cap">
   <div class="card-body">
@@ -20,6 +21,7 @@ export default class Pokemon {
     
     <button class="btn btn-primary" onclick="app.controllers.pokeController.removeCard('${this.id}')">Remove from Pack</button>
   </div>
+</div>
 </div>
     `
   }

@@ -5,9 +5,9 @@ export default class BasicPokemon {
   }
   get SimpleTemplate() {
     return `
-<div onclick="app.controllers.pokeController.addCardMember('${this.url}')" class="card">
-  <h4 class="card-title text-center">${this.name}</h4>
-</div>
+<button type="button" onclick="app.controllers.pokeController.addCardMember('${this.url}')" class="btn btn-warning text-white m-2">
+  <h4 class=" text-center">${this.name}</h4>
+</button>
     `
   }
 }
