@@ -3,7 +3,7 @@ import PokeController from "./components/pokeController.js";
 
 class App {
   constructor() {
-    this.controller = {
+    this.controllers = {
       mainController: new MainController(),
       pokeController: new PokeController()
     }

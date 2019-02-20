@@ -1,24 +1,15 @@
 export default class Pokemon {
   constructor(data) {
     this.name = data.name
-    this.weight = data.weight
-    this.height = data.height
-    this.id = data.id
-    this.img = data.img || data.sprites.front_default
     this.url = data.url
-    //|| data.species.url
-
+    // if (!data.id) {
+    //   return
+    // }
+    this.id = data.id || data._id
+    // this.weight = data.weight
+    this.description = data.name
+    this.img = data.img || data.sprites.front_default
   }
-
-  get SimpleTemplate() {
-    return `
-<div onclick="app.controllers.pokeController.removeTeamMember(${this.id})" class="card">
-  <h4 class="card-title">${this.name}</h4>
-</div>
-    `
-  }
-
-
 
   get CardTemplate() {
     return `
@@ -26,10 +17,8 @@ export default class Pokemon {
   <img class="card-img-top" src="${this.img}" alt="Card image cap">
   <div class="card-body">
     <h4 class="card-title">${this.name}</h4>
-    <p class="card-text">
-     The ${this.name} is ${this.height} units high and ${this.weight} units heavy.
-    </p>
-    <button class="btn btn-primary">Add to Pack</button>
+    
+    <button class="btn btn-primary" onclick="app.controllers.pokeController.removeCard('${this.id}')">Remove from Pack</button>
   </div>
 </div>
     `

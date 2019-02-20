@@ -1,5 +1,8 @@
-import PokeController from './pokeController.js'
+import PokeService from './pokeService.js'
+
 //private
+let _pkService = new PokeService()
+
 
 
 function mainInjector() {
@@ -31,8 +34,7 @@ function mainInjector() {
 export default class MainController {
   constructor() {
     mainInjector()
-
-
-
+    _pkService.getApiPokes()
+    _pkService.getMyCards()
   }
 }
